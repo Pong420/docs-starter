@@ -15,19 +15,18 @@
   }
 
   &--sublist-caret {
-    &::after {
-      display: none;
-    }
+    // &::before {
+    //   display: none;
+    // }
 
-    &::before {
-      top: 14px;
-      position: absolute;
-      left: -1px;
+    &::after {
       content: '';
-      background-repeat: no-repeat;
-      width: 10px;
-      height: 7px;
-      background-size: 10px 7px;
+      margin-left: auto;
+      min-width: 1.25rem;
+      background: var(--ifm-menu-link-sublist-icon) 50% / 2rem 2rem;
+      height: 1.25rem;
+      transform: rotate(180deg);
+      width: 1.25rem;
       transition: transform var(--ifm-transition-fast) linear;
     }
   }
@@ -62,17 +61,10 @@
 }
 
 nav.menu {
-  padding: 0;
-  padding-right: 40px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 20px 20px 10px;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   position: relative;
-
-  @include tablet-screen {
-    margin-right: 20px;
-  }
 
   &::-webkit-scrollbar {
     display: none;
@@ -87,7 +79,6 @@ nav.menu {
     line-height: 1.25;
   }
 
-
   .menu__list-item-collapsible:hover {
     background-color: transparent;
   }
@@ -98,7 +89,7 @@ nav.menu {
 
   .theme-doc-sidebar-menu {
     > .theme-doc-sidebar-item-category:not(:first-child) {
-      margin-bottom: 20px;
+      margin-bottom: 0px;
     }
 
     .theme-doc-sidebar-item-category-level-1.menu__list-item {
@@ -116,7 +107,7 @@ nav.menu {
 
 html[data-theme='dark'] {
   .main-wrapper:before:before {
-      display: none;
+    display: none;
   }
 
   .menu {
@@ -143,15 +134,12 @@ html[data-theme='dark'] {
         color: $color-primary-blue;
       }
     }
-
-    .menu__link--sublist-caret::before {
-      background: url('/img/chevron-white.svg');
-    }
   }
 }
 
 html[data-theme='light'] {
-  .main-wrapper:before, aside {
+  .main-wrapper:before,
+  aside {
     background-color: $color-white;
   }
   .menu {
@@ -164,7 +152,7 @@ html[data-theme='light'] {
     .menu__list-item-collapsible:hover {
       .menu__link {
         color: $color-secondary-blue;
-      background: var(--ifm-menu-color-background-active);
+        background: var(--ifm-menu-color-background-active);
       }
     }
 
@@ -178,10 +166,6 @@ html[data-theme='light'] {
       &--active:not(.menu__link--sublist) {
         color: $color-secondary-blue;
       }
-    }
-
-    .menu__link--sublist-caret::before {
-      background: url('/img/chevron-black.svg');
     }
   }
 }
