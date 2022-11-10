@@ -30,22 +30,6 @@ function Column({ column }) {
   );
 }
 
-function SideColumn() {
-  return (
-    <div className="col footer__col">
-      <a
-        className="footer__button"
-        href="https://github.com/novuhq/novu"
-        target="_blank"
-        rel="noopener"
-      >
-        Star us on Github
-      </a>
-      <div className="footer__copyright-mobile">© {new Date().getFullYear()} Novu</div>
-    </div>
-  );
-}
-
 export default function FooterLinksMultiColumn({ columns }) {
   return (
     <div className="row footer__links">
@@ -53,7 +37,6 @@ export default function FooterLinksMultiColumn({ columns }) {
         <Column key={i} column={column} />
       ))}
       <div className="footer__break"></div>
-      <SideColumn />
     </div>
   );
 }

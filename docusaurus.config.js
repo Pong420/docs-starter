@@ -4,15 +4,18 @@ const codeTheme = require('./src/utils/prism');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 (
   module.exports = {
-    title: 'Novu',
-    tagline: 'All the tools you need to build modern transactional notification experience',
-    url: 'https://docs.novu.co',
+    // TODO:
+    title: '<Title>',
+    // TODO:
+    tagline: '',
+    // TODO:
+    url: 'http://localhost:4040',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
-    organizationName: 'novuhq', // Usually your GitHub org/user name.
-    projectName: 'novu', // Usually your repo name.
+    organizationName: '<organizationName>', // Usually your GitHub org/user name.
+    projectName: '<title>', // Usually your repo name.
     plugins: ['docusaurus-plugin-sass'],
     presets: [
       [
@@ -20,19 +23,18 @@ const codeTheme = require('./src/utils/prism');
         /** @type {import('@docusaurus/preset-classic').Options} */
         ({
           docs: {
-            sidebarCollapsed: false,
+            // sidebarCollapsed: false,
             sidebarPath: require.resolve('./sidebars.js'),
-            // Please change this to your repo.
-            editUrl: 'https://github.com/novuhq/novu/blob/main/docs/',
+            // TODO: Please change this to your repo.
+            // editUrl: '',
             breadcrumbs: false,
             routeBasePath: '/',
-            showLastUpdateAuthor: true,
-            showLastUpdateTime: true,
           },
-          gtag: {
-            trackingID: 'G-226F0LR9KE',
-            anonymizeIP: true,
-          },
+          // TODO: ga tag
+          // gtag: {
+          //   trackingID: '',
+          //   anonymizeIP: true,
+          // },
           theme: {
             customCss: require.resolve('./src/css/custom.scss'),
           },
@@ -45,23 +47,24 @@ const codeTheme = require('./src/utils/prism');
       ({
         metadata: [
           { name: 'robots', content: 'max-image-preview:large' },
-          {
-            name: 'keywords',
-            content:
-              'novu,novu documentation,novu docs,notification,notification insfrastructure,open source,oss',
-          },
+          // TODO: adding keywords metadata
+          // {
+          //   name: 'keywords',
+          //   content: '',
+          // },
         ],
         image: '/img/social-preview.jpg',
-        algolia: {
-          appId: '5AG4YK0YDV',
-          apiKey: '67ce2424b44097b63a6f21a6615de538',
-          indexName: 'novu',
-          contextualSearch: true,
-          externalUrlRegex: 'https://docs.novu.co/api/.*',
-        },
+        // TODO: algolia
+        // algolia: {
+        //   appId: '',
+        //   apiKey: '',
+        //   indexName: '',
+        //   contextualSearch: true,
+        //   externalUrlRegex: '',
+        // },
         docs: {
           sidebar: {
-            autoCollapseCategories: false,
+            // autoCollapseCategories: false,
           },
         },
         colorMode: {
@@ -69,7 +72,7 @@ const codeTheme = require('./src/utils/prism');
         },
         navbar: {
           logo: {
-            alt: 'Novu Logo',
+            alt: 'Logo',
             src: 'img/logo-light-bg.svg',
             srcDark: 'img/logo-dark-bg.svg',
             href: '/',
@@ -83,67 +86,12 @@ const codeTheme = require('./src/utils/prism');
               position: 'left',
             },
             {
-              href: 'https://docs.novu.co/api',
-              label: 'API Reference',
-              position: 'right',
-            },
-            {
-              href: 'https://github.com/novuhq/novu',
+              // TODO: github url
+              href: 'https://github.com/Pong420/docs-starter',
               label: 'GitHub',
               position: 'right',
             },
-            {
-              href: 'https://discord.novu.co',
-              label: 'Community',
-              position: 'right',
-            },
           ],
-        },
-        footer: {
-          style: 'dark',
-          logo: {
-            alt: 'Novu',
-            src: 'img/logo-light-bg.svg',
-            srcDark: 'img/logo-dark-bg.svg',
-            href: '/',
-            width: 114,
-            height: 32,
-          },
-          links: [
-            {
-              items: [
-                {
-                  label: 'Documentation',
-                  to: '/',
-                },
-                {
-                  label: 'Providers',
-                  href: 'https://github.com/novuhq/novu/tree/main/providers',
-                },
-                {
-                  label: 'Contact Us',
-                  href: 'https://discord.novu.co',
-                },
-              ],
-            },
-            {
-              items: [
-                {
-                  label: 'Discord',
-                  href: 'https://discord.novu.co',
-                },
-                {
-                  label: 'Twitter',
-                  href: 'https://twitter.com/novuhq',
-                },
-                {
-                  label: 'GitHub',
-                  href: 'https://github.com/novuhq/novu',
-                },
-              ],
-            },
-          ],
-          copyright: `© ${new Date().getFullYear()} Novu`,
         },
         tableOfContents: {
           minHeadingLevel: 2,
@@ -151,7 +99,7 @@ const codeTheme = require('./src/utils/prism');
         },
         prism: {
           theme: codeTheme,
-          additionalLanguages: ['php', 'ruby', 'java'],
+          additionalLanguages: [],
         },
       }),
   }
