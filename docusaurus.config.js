@@ -53,7 +53,8 @@ const codeTheme = require('./src/utils/prism');
           //   content: '',
           // },
         ],
-        image: '/img/social-preview.jpg',
+        // TODO: social-preview
+        // image: '/img/social-preview.jpg',
         // TODO: algolia
         // algolia: {
         //   appId: '',
