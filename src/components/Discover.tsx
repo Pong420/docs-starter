@@ -54,6 +54,8 @@ export default function Discover() {
   const sidebar = useContext(SidebarContext);
   const sidebarItems = sidebar.filter((item) => item.docId !== 'home');
 
+  console.log(sidebar);
+
   return (
     <div className={styles.discoverWrapper}>
       {sidebarItems.map(({ label, items }) => (
