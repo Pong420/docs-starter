@@ -30,6 +30,16 @@
     }
   }
 
+  li {
+    > p {
+      margin: 0;
+
+      + * {
+        margin-top: 10px;
+      }
+    }
+  }
+
   a:not([class]) {
     text-decoration: underline 1px rgba(0, 0, 0, 0);
     text-underline-offset: 3px;
@@ -77,6 +87,12 @@
   table {
     margin-bottom: 32px;
 
+    &.mantine-Table-root {
+      tr {
+        border: none;
+      }
+    }
+
     th,
     td {
       border: none;
@@ -114,7 +130,8 @@ html[data-theme='dark'] {
       text-decoration-color: $color-primary-blue;
     }
 
-    ul, ol {
+    ul,
+    ol {
       > li::marker {
         color: $color-primary-blue;
       }
@@ -125,7 +142,6 @@ html[data-theme='dark'] {
         color: $color-gray-8;
       }
     }
-  
 
     code {
       &:not([class]) {
@@ -141,12 +157,12 @@ html[data-theme='dark'] {
   }
 }
 
-
 html[data-theme='light'] {
   --ifm-table-border-color: #cccccc;
 
   .markdown {
-    ul, ol {
+    ul,
+    ol {
       > li::marker {
         color: $color-secondary-blue;
       }

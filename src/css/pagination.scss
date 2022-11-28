@@ -29,7 +29,7 @@
       content: '';
       background-repeat: no-repeat;
     }
-  
+
     &.pagination-nav__link--next {
       .pagination-nav__label {
         justify-content: flex-end;
@@ -38,8 +38,8 @@
           margin-left: 8px;
         }
       }
-    } 
-  
+    }
+
     &.pagination-nav__link--prev {
       .pagination-nav__label {
         justify-content: flex-start;
@@ -47,7 +47,7 @@
           margin-right: 8px;
         }
       }
-    } 
+    }
   }
 }
 

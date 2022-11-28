@@ -5,7 +5,7 @@ module.exports = {
   ...darkTheme,
   plain: {
     color: '#fff',
-    backgroundColor: '#1A1A1A',
+    backgroundColor: '#1A1A1A'
   },
   styles: [
     ...darkTheme.styles,
@@ -13,58 +13,58 @@ module.exports = {
       types: ['atrule', 'attr-value'],
       style: {
         color: '#FFE14D',
-        fontStyle: 'normal',
-      },
+        fontStyle: 'normal'
+      }
     },
     {
       types: ['function', 'boolean', 'number', 'constant', 'symbol', 'deleted'],
       style: {
-        color: '#FF33DE',
-      },
+        color: '#FF33DE'
+      }
     },
     {
       types: ['string', 'tag', 'attr-name'],
       style: {
         color: '#05E585',
-        fontStyle: 'normal',
-      },
+        fontStyle: 'normal'
+      }
     },
     {
       types: ['keyword'],
       style: {
         color: '#03d5ff',
-        fontStyle: 'normal',
-      },
+        fontStyle: 'normal'
+      }
     },
     {
       types: ['function'],
       style: {
-        color: '#ffe14c',
-      },
+        color: '#ffe14c'
+      }
     },
     {
       types: ['script'],
       style: {
-        color: '#e300bd',
-      },
+        color: '#e300bd'
+      }
     },
     {
       types: ['operator', 'class-name', 'punctuation', 'property'],
       style: {
-        color: '#FFFFFF',
-      },
+        color: '#FFFFFF'
+      }
     },
     {
       types: ['selector', 'char', 'builtin', 'inserted'],
       style: {
-        color: '#00D5FF',
-      },
+        color: '#00D5FF'
+      }
     },
     {
       types: ['comment', 'prolog', 'doctype', 'cdata'],
       style: {
-        color: '#666666',
-      },
-    },
-  ],
+        color: '#666666'
+      }
+    }
+  ]
 };

@@ -6,7 +6,7 @@ This is docusaurus template based on [https://github.com/novuhq/novu](https://gi
 
 1. npm install
 2. replace below variables
-    - `<title>`
-    - `<Title>`
-    - `<organizationName>`
+   - `<title>`
+   - `<Title>`
+   - `<organizationName>`
 3. edit `docusaurus.config.js`

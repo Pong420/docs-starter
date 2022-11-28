@@ -1,30 +1,30 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true,
+    es6: true
   },
   extends: ['prettier'],
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    SharedArrayBuffer: 'readonly'
   },
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: 2020,
-    sourceType: 'module',
+    sourceType: 'module'
   },
   plugins: ['react'],
   rules: {
     camelcase: 'off',
-    '@typescript-eslint/camelcase': ['warn'],
+    '@typescript-eslint/camelcase': ['warn']
   },
   settings: {
     'import/resolver': {
       node: {
-        paths: ['src'],
-      },
-    },
-  },
+        paths: ['src']
+      }
+    }
+  }
 };

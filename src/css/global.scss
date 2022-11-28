@@ -5,7 +5,7 @@
   --ifm-code-font-size: 16px;
   --ifm-line-height-base: 1.5;
   --ifm-menu-link-padding-vertical: 8px;
-  --ifm-menu-link-padding-horizontal: 20px;
+  --ifm-menu-link-padding-horizontal: 14px;
   --ifm-heading-font-weight: 500;
   --ifm-toc-padding-vertical: 16px;
   --ifm-navbar-padding-vertical: 12px;
@@ -88,12 +88,12 @@ main {
   }
 
   .row .col,
-  .row .col > * {
+  .row .col > *:not([role='alert']) {
     width: 100%;
-    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1 1 auto;
   }
 }
 
@@ -263,4 +263,8 @@ html[data-theme='light'] {
 
 .theme-last-updated {
   font-style: normal;
+}
+
+.theme-doc-version-badge {
+  margin-bottom: 5px;
 }

@@ -11,4 +11,3 @@ custom_edit_url: null
 # Documentation
 
 This is docusaurus template based on [https://github.com/novuhq/novu](https://github.com/novuhq/novu)
-
