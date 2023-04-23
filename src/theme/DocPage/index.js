@@ -8,7 +8,7 @@ export const SidebarContext = createContext(context);
 
 export default function DocPageWrapper(props) {
   return (
-    <SidebarContext.Provider value={props.versionMetadata.docsSidebars.tutorialSidebar}>
+    <SidebarContext.Provider value={props.versionMetadata.docsSidebars.docsSidebar}>
       <DocPage {...props} />
     </SidebarContext.Provider>
   );
