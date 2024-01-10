@@ -1,125 +1,99 @@
-const { spawnSync } = require('child_process');
-const codeTheme = require('./src/utils/prism');
+import { spawnSync } from 'child_process';
+import codeTheme from './prism.js';
 
 const docBasePath = '/docs';
 
-module.exports =
-  /**
-   * @return {import('@docusaurus/types').DocusaurusConfig}
-   */
-  async () => {
-    const gitRepoUrl = spawnSync('git', ['remote', '-v'], { shell: true })
+/**
+ * @return {import('@docusaurus/types').DocusaurusConfig}
+ */
+export default async () => {
+  let gitRepoUrl = '';
+  try {
+    spawnSync('git', ['remote', '-v'], { shell: true })
       .stdout.toString()
       .split('\n')
       .find(r => r.startsWith('origin'))
       ?.split('\t')[1]
-      ?.replace(/\.git.*/, '');
+      ?.replace(/\.git.*/, '')
+      ?.replace(/:/g, '/')
+      ?.replace('git@', 'https://') || '';
+  } catch (error) {}
 
-    return {
-      // TODO:
-      title: '<Title>',
-      // TODO:
-      tagline: '',
-      // TODO:
-      url: 'http://localhost:4040',
-      baseUrl: '/',
-      onBrokenLinks: 'throw',
-      onBrokenMarkdownLinks: 'warn',
-      favicon: 'img/favicon.ico',
-      // TODO:
-      organizationName: '<organizationName>', // Usually your GitHub org/user name.
-      // TODO:
-      projectName: '<title>', // Usually your repo name.
-      plugins: ['docusaurus-plugin-sass'],
-      presets: [
-        [
-          '@docusaurus/preset-classic',
-          /** @type {import('@docusaurus/preset-classic').Options} */
-          ({
-            docs: {
-              // sidebarCollapsed: false,
-              sidebarPath: require.resolve('./sidebars.js'),
-              // TODO: Please change this to your repo.
-              // editUrl: '',
-              breadcrumbs: false,
-              routeBasePath: docBasePath,
-              lastVersion: 'current',
-              versions: {
-                current: {
-                  label: 'phaser3'
-                }
-              }
-            },
-            // TODO: ga tag
-            // gtag: {
-            //   trackingID: '',
-            //   anonymizeIP: true,
-            // },
-            theme: {
-              customCss: require.resolve('./src/css/custom.scss')
-            }
-          })
-        ]
-      ],
-
-      markdown: {
-        mermaid: true
-      },
-
-      themes: ['@docusaurus/theme-mermaid'],
-
-      themeConfig:
-        /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  return {
+    title: '<Title>',
+    tagline: '',
+    url: 'http://localhost:4040',
+    baseUrl: '/',
+    onBrokenLinks: 'throw',
+    onBrokenMarkdownLinks: 'warn',
+    favicon: 'img/favicon.ico',
+    organizationName: '', // Usually your GitHub org/user name.
+    projectName: '<title>', // Usually your repo name.
+    plugins: ['docusaurus-plugin-sass'],
+    presets: [
+      [
+        '@docusaurus/preset-classic',
+        /** @type {import('@docusaurus/preset-classic').Options} */
         ({
-          metadata: [{ name: 'robots', content: 'max-image-preview:large' }],
-          // TODO: algolia
-          // algolia: {
-          //   appId: '',
-          //   apiKey: '',
-          //   indexName: '',
-          //   contextualSearch: true,
-          //   externalUrlRegex: '',
-          // },
           docs: {
-            sidebar: {
-              // autoCollapseCategories: false,
+            // sidebarCollapsed: false,
+            sidebarPath: require.resolve('./sidebars.js'),
+            breadcrumbs: false,
+            routeBasePath: docBasePath,
+            lastVersion: 'current',
+            versions: {
+              current: {
+                label: 'phaser3'
+              }
             }
           },
-          colorMode: {
-            respectPrefersColorScheme: true
-          },
-          navbar: {
-            logo: {
-              alt: 'Logo',
-              src: 'img/logo-light-bg.svg',
-              srcDark: 'img/logo-dark-bg.svg',
-              href: '/',
-              target: '_self',
-              width: 114,
-              height: 32
-            },
-            items: [
-              {
-                type: 'search',
-                position: 'left'
-              },
-              {
-                // TODO: github url
-                href: gitRepoUrl,
-                label: 'GitHub',
-                position: 'right'
-              }
-            ]
-          },
-          tableOfContents: {
-            minHeadingLevel: 2,
-            maxHeadingLevel: 3
-          },
-          prism: {
-            theme: codeTheme,
-            // TODO: bash, zsh
-            additionalLanguages: []
+          theme: {
+            customCss: require.resolve('./src/css/custom.scss')
           }
         })
-    };
+      ]
+    ],
+
+    markdown: {
+      mermaid: true
+    },
+
+    themes: ['@docusaurus/theme-mermaid'],
+
+    themeConfig:
+      /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+      ({
+        metadata: [{ name: 'robots', content: 'max-image-preview:large' }],
+        docs: {
+          sidebar: {
+            // autoCollapseCategories: false,
+          }
+        },
+        colorMode: {
+          respectPrefersColorScheme: true
+        },
+        navbar: {
+          items: [
+            {
+              type: 'search',
+              position: 'left'
+            },
+            gitRepoUrl && {
+              href: gitRepoUrl,
+              label: 'GitHub',
+              position: 'right'
+            }
+          ].filter(Boolean)
+        },
+        tableOfContents: {
+          minHeadingLevel: 2,
+          maxHeadingLevel: 3
+        },
+        prism: {
+          theme: codeTheme,
+          // TODO: bash, zsh
+          additionalLanguages: ['json', 'typescript', 'javascript', 'bash']
+        }
+      })
   };
+};
