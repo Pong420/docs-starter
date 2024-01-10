@@ -1,4 +1,4 @@
 {
   "*.{js,jsx,tsx,html,css,scss,md}": "prettier --write",
-  "*.{js,jsx,tsx}": "eslint --cache --fix"
+  "*.{js,jsx,ts,tsx}": "eslint --rule 'no-console: [\"error\", { allow: [\"warn\", \"error\", \"debug\", \"info\"] }]' --rule 'no-debugger: [\"error\"]' --max-warnings=0 --no-warn-ignored"
 }
