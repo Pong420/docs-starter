@@ -1,5 +1,4 @@
 {
   "*.{js,jsx,tsx,html,css,scss,md}": "prettier --write",
-  "*.{js,jsx,tsx}": "eslint --cache --fix",
-  "*.{md}": "markdownlint --fix --ignore-path .gitignore"
+  "*.{js,jsx,tsx}": "eslint --cache --fix"
 }

@@ -20,15 +20,15 @@ export default async () => {
   } catch (error) {}
 
   return {
-    title: '<Title>',
+    title: 'Docusaurus',
     tagline: '',
     url: 'http://localhost:4040',
-    baseUrl: '/',
+    baseUrl: '',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
     organizationName: '', // Usually your GitHub org/user name.
-    projectName: '<title>', // Usually your repo name.
+    projectName: 'docusaurus', // Usually your repo name.
     plugins: ['docusaurus-plugin-sass'],
     presets: [
       [

@@ -1,5 +1,5 @@
 {
-  "name": "@novu/docs",
+  "name": "docusaurus-starter",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -44,12 +44,11 @@
     "@types/react-router-dom": "5.3.3",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.33.2",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
-    "markdownlint-cli": "^0.38.0",
     "prettier": "3.1.1",
     "sass-loader": "^13.3.3",
-
     "typescript": "^5.3.3"
   },
   "browserslist": {
