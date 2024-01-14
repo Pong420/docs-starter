@@ -5,7 +5,9 @@
  */
 
 /* You can override the default Infima variables here. */
-@import 'fonts';
+@import '@mantine/core/styles.css';
+@import '~monaspace-font/krypton-italic.css';
+@import '~monaspace-font/krypton.css';
 @import 'variables';
 @import 'media-queries';
 @import 'global';

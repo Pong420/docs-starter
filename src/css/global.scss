@@ -1,20 +1,22 @@
 :root {
-  --ifm-font-family-monospace: 'Brother-1816';
-  --ifm-font-family-base: 'Brother-1816';
+  --ifm-font-family-monospace: 'Monaspace Krypton';
+  --ifm-font-family-base: 'Monaspace Krypton';
   --ifm-footer-link-color: #ffffff;
-  --ifm-code-font-size: 16px;
+  --ifm-code-font-size: 14px;
   --ifm-line-height-base: 1.5;
   --ifm-menu-link-padding-vertical: 8px;
   --ifm-menu-link-padding-horizontal: 14px;
-  --ifm-heading-font-weight: 500;
+  --ifm-heading-font-weight: 800;
   --ifm-toc-padding-vertical: 16px;
   --ifm-navbar-padding-vertical: 12px;
+  --ifm-leading-desktop: 1;
 }
 
 body {
-  font-family: 'Brother-1816', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 350;
-  font-size: 18px;
+  font-family: var(--ifm-font-family-base), 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: unset;
 }
 
 main {
@@ -100,7 +102,7 @@ main {
 article,
 .pagination-nav {
   width: 100%;
-  max-width: 796px;
+  max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
 
@@ -186,8 +188,8 @@ html[data-theme='dark'] {
   --ifm-font-color-base: #e6e6e6;
   --ifm-toc-border-color: #262626;
   --ifm-heading-color: #ffffff;
-  --ifm-color-primary: #00d5ff;
-  --ifm-link-color: #00d5ff;
+  --ifm-color-primary: #339af0;
+  --ifm-link-color: #339af0;
   --ifm-menu-color-background-active: rgba(0, 213, 255, 0.1);
 
   main {
@@ -211,9 +213,9 @@ html[data-theme='dark'] {
       color: $color-gray-9;
     }
 
-    &::before {
-      background-image: url('/img/github-white.svg');
-    }
+    // &::before {
+    //   background-image: url('/img/github-white.svg');
+    // }
   }
 
   .docusaurus-highlight-code-line {
@@ -255,9 +257,9 @@ html[data-theme='light'] {
       color: $color-gray-9;
     }
 
-    &::before {
-      background-image: url('/img/github-black.svg');
-    }
+    // &::before {
+    //   background-image: url('/img/github-black.svg');
+    // }
   }
 }
 

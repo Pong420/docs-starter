@@ -1,14 +1,12 @@
-// eslint-disable-next-line import/extensions
-const darkTheme = require('prism-react-renderer/themes/dracula/index.cjs.js');
+import { PrismTheme, themes as prismThemes } from 'prism-react-renderer';
 
-module.exports = {
-  ...darkTheme,
+export default {
   plain: {
     color: '#fff',
     backgroundColor: '#1A1A1A'
   },
   styles: [
-    ...darkTheme.styles,
+    ...prismThemes.dracula.styles,
     {
       types: ['atrule', 'attr-value'],
       style: {
@@ -67,4 +65,4 @@ module.exports = {
       }
     }
   ]
-};
+} satisfies PrismTheme;

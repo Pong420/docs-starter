@@ -1,27 +1,32 @@
 .markdown {
   h1,
   h1:first-child {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   > h2 {
-    font-size: 24px;
+    font-size: 26px;
+    // margin-bottom: 0.5rem;
   }
 
   > h3 {
-    font-size: 20px;
+    font-size: 22px;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
   }
 
   > h4 {
     font-size: 18px;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
   }
 
   strong {
-    font-weight: 500;
+    font-weight: 800;
   }
 
   h2 {
-    padding-top: 40px;
+    padding-top: 30px;
     margin-top: 40px;
 
     @include mobile-screen {
@@ -37,6 +42,10 @@
       + * {
         margin-top: 10px;
       }
+    }
+
+    > code + .theme-code-block {
+      margin-top: var(--ifm-list-item-margin);
     }
   }
 
@@ -64,7 +73,7 @@
 
   pre code span,
   code {
-    font-family: 'IBM Plex Mono';
+    font-family: var(--ifm-font-family-monospace);
   }
 
   pre code:not([class]) {

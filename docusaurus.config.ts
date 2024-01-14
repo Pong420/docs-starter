@@ -1,15 +1,15 @@
+import path from 'path';
 import { spawnSync } from 'child_process';
-import codeTheme from './prism.js';
+import type { Config } from '@docusaurus/types';
+import * as Preset from '@docusaurus/preset-classic';
+import codeTheme from './prism';
 
 const docBasePath = '/docs';
 
-/**
- * @return {import('@docusaurus/types').DocusaurusConfig}
- */
-export default async () => {
+export default (): Config => {
   let gitRepoUrl = '';
   try {
-    spawnSync('git', ['remote', '-v'], { shell: true })
+    gitRepoUrl = spawnSync('git', ['remote', '-v'], { shell: true })
       .stdout.toString()
       .split('\n')
       .find(r => r.startsWith('origin'))
@@ -17,7 +17,9 @@ export default async () => {
       ?.replace(/\.git.*/, '')
       ?.replace(/:/g, '/')
       ?.replace('git@', 'https://') || '';
-  } catch (error) {}
+  } catch (error) {
+    // 
+  }
 
   return {
     title: 'Docusaurus',
@@ -29,12 +31,14 @@ export default async () => {
     favicon: 'img/favicon.ico',
     organizationName: '', // Usually your GitHub org/user name.
     projectName: 'docusaurus', // Usually your repo name.
-    plugins: ['docusaurus-plugin-sass'],
+    plugins: [
+      'docusaurus-plugin-sass',
+      path.join(__dirname, 'plugin/demo-component.js'),
+    ],
     presets: [
       [
         '@docusaurus/preset-classic',
-        /** @type {import('@docusaurus/preset-classic').Options} */
-        ({
+        {
           docs: {
             // sidebarCollapsed: false,
             sidebarPath: require.resolve('./sidebars.js'),
@@ -50,7 +54,7 @@ export default async () => {
           theme: {
             customCss: require.resolve('./src/css/custom.scss')
           }
-        })
+        } satisfies Preset.Options
       ]
     ],
 
@@ -61,7 +65,6 @@ export default async () => {
     themes: ['@docusaurus/theme-mermaid'],
 
     themeConfig:
-      /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
         metadata: [{ name: 'robots', content: 'max-image-preview:large' }],
         docs: {
@@ -83,7 +86,7 @@ export default async () => {
               label: 'GitHub',
               position: 'right'
             }
-          ].filter(Boolean)
+          ].filter(Boolean) as NonNullable<Preset.ThemeConfig['navbar']['items']>
         },
         tableOfContents: {
           minHeadingLevel: 2,
@@ -94,6 +97,6 @@ export default async () => {
           // TODO: bash, zsh
           additionalLanguages: ['json', 'typescript', 'javascript', 'bash']
         }
-      })
+      }) satisfies Preset.ThemeConfig
   };
 };
