@@ -1,9 +1,10 @@
 import path from 'path';
+import { PluginModule } from '@docusaurus/types';
 
-export default function (context, options) {
+const plugin: PluginModule = function () {
   return {
     name: 'custom-docusaurus-demo-component-plugin',
-    configureWebpack(config, isServer, utils) {
+    configureWebpack() {
       return {
         mergeStrategy: { 'module.rules': 'prepend' },
         module: {
@@ -19,4 +20,6 @@ export default function (context, options) {
       };
     }
   };
-}
+};
+
+export default plugin;

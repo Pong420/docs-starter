@@ -3,6 +3,7 @@ import { spawnSync } from 'child_process';
 import type { Config } from '@docusaurus/types';
 import * as Preset from '@docusaurus/preset-classic';
 import codeTheme from './prism';
+import './env';
 
 const docBasePath = '/docs';
 
