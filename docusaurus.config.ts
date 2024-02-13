@@ -34,7 +34,7 @@ export default (): Config => {
     projectName: 'docusaurus', // Usually your repo name.
     plugins: [
       'docusaurus-plugin-sass',
-      path.join(__dirname, 'plugin/demo-component.js'),
+      path.join(__dirname, 'plugin/demo-component.ts'),
     ],
     presets: [
       [
